@@ -1,16 +1,20 @@
 
-CFLAGS = -c -Wall -std=c11 -g -o2 #-fopenmp
+CC = mpicc
+
+CFLAGS = -c -Wall -std=c11 -g -o2 -DNDEBUG -I/usr/include/openmpi-x86_64/
 
 LDFLAGS = 
 
-SRCS= main.c
+SRCS= main.c array_functions.c
 
-OBJS = main.o
+OBJS = main.o array_functions.o
 
 all: project $(SRCS)
 
 project: $(OBJS)
 	$(CC) $(OBJS) $(LDFLAGS) -o project
+array_functions.o: array_functions.c
+	$(CC) $(CFLAGS) array_functions.c -o array_functions.o
 main.o: main.c
 	$(CC) $(CFLAGS) main.c -o main.o
 
