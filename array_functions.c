@@ -2,7 +2,7 @@
 
 int *create_array(const int num, const int limit)
 {
-    int *array = NULL; ///< The array we need to find the max in
+    int *array = NULL; 
 
     /* Generate the random array */
     array = (int *)malloc(num * sizeof(int));
@@ -41,7 +41,7 @@ int parallel_max(int *array, int size, int rank, int num_procs)
         end = start + elements_per_proc - 1;
     }
 
-    int local_max = array[start]; // Инициализируем локальный максимум значением первого элемента
+    int local_max = array[start];
 
     for (int i = start + 1; i <= end; ++i)
     {
