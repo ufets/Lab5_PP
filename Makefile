@@ -1,7 +1,7 @@
 
 CC = mpicc
 
-CFLAGS = -c -Wall -std=c11 -g -o2 -I/usr/include/openmpi-x86_64/  #-DNDEBUG 
+CFLAGS = -c -Wall -std=c11 -g -o2 -I/usr/include/openmpi-x86_64/  -DNDEBUG 
 
 LDFLAGS = 
 
